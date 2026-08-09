@@ -5,7 +5,7 @@ import '../../data/repositories/cause_repository_impl.dart';
 import '../../domain/models/cause.dart';
 import '../../domain/repositories/cause_repository.dart';
 
-// --- Dependency Injection Providers ---
+// -- Dependency Injection Providers --
 
 final dioClientProvider = Provider<DioClient>((ref) {
   return DioClient();
@@ -21,7 +21,7 @@ final causeRepositoryProvider = Provider<CauseRepository>((ref) {
   return CauseRepositoryImpl(remoteDataSource: remoteDataSource);
 });
 
-// --- API State Notifier ---
+// -- API State Notifier --
 
 class CausesNotifier extends AsyncNotifier<List<Cause>> {
   @override
@@ -39,11 +39,12 @@ class CausesNotifier extends AsyncNotifier<List<Cause>> {
   }
 }
 
-final causesAsyncNotifierProvider = AsyncNotifierProvider<CausesNotifier, List<Cause>>(
+final causesAsyncNotifierProvider =
+    AsyncNotifierProvider<CausesNotifier, List<Cause>>(
   CausesNotifier.new,
 );
 
-// --- UI Filter State Providers ---
+// -- UI Filter State Providers --
 
 /// Holds the current text search query
 final searchQueryProvider = StateProvider<String>((ref) => '');
@@ -51,7 +52,7 @@ final searchQueryProvider = StateProvider<String>((ref) => '');
 /// Holds the currently selected category filter (null = "All")
 final selectedCategoryProvider = StateProvider<String?>((ref) => null);
 
-// --- Favorites State Notifier ---
+// -- Favorites State Notifier --
 
 class FavoritesNotifier extends Notifier<Set<int>> {
   @override
@@ -74,7 +75,7 @@ final favoritesNotifierProvider = NotifierProvider<FavoritesNotifier, Set<int>>(
   FavoritesNotifier.new,
 );
 
-// --- Computed Derived Providers (Minimal Rebuild Optimization) ---
+// -- Computed Derived Providers (Minimal Rebuild Optimization) --
 
 /// Derived provider that computes filtered causes based on search query and category filter.
 final filteredCausesProvider = Provider<AsyncValue<List<Cause>>>((ref) {
@@ -89,8 +90,8 @@ final filteredCausesProvider = Provider<AsyncValue<List<Cause>>>((ref) {
           cause.title.toLowerCase().contains(searchQuery);
 
       // Category filter chip
-      final matchesCategory = selectedCategory == null ||
-          cause.category == selectedCategory;
+      final matchesCategory =
+          selectedCategory == null || cause.category == selectedCategory;
 
       return matchesSearch && matchesCategory;
     }).toList();
