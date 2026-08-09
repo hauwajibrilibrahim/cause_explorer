@@ -2,6 +2,7 @@ import 'package:cause_explorer/features/causes/presentation/providers/cause_prov
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+// Unit tests for cause providers
 void main() {
   group('FavoritesNotifier Provider Unit Tests', () {
     test('initial state is empty set', () {

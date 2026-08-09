@@ -3,6 +3,7 @@ import 'package:cause_explorer/features/causes/data/models/cause_dto.dart';
 import 'package:cause_explorer/features/causes/domain/models/cause.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+// Unit tests for cause domain
 void main() {
   group('Category Derivation Formula Tests', () {
     test('userId 1 maps to Health (index 0)', () {
