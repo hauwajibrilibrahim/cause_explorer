@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/cause_providers.dart';
 
+// Search bar widget for searching causes
 class SearchBarWidget extends ConsumerStatefulWidget {
   const SearchBarWidget({super.key});
 
@@ -45,13 +46,13 @@ class _SearchBarWidgetState extends ConsumerState<SearchBarWidget> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha:0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
         ],
         border: Border.all(
-          color: theme.dividerColor.withValues(alpha:0.2),
+          color: theme.dividerColor.withValues(alpha: 0.2),
         ),
       ),
       child: TextField(
@@ -63,7 +64,7 @@ class _SearchBarWidgetState extends ConsumerState<SearchBarWidget> {
         decoration: InputDecoration(
           hintText: 'Search causes by title...',
           hintStyle: theme.textTheme.bodyMedium?.copyWith(
-            color: theme.textTheme.bodyMedium?.color?.withValues(alpha:0.6),
+            color: theme.textTheme.bodyMedium?.color?.withValues(alpha: 0.6),
           ),
           prefixIcon: Icon(
             Icons.search_rounded,
@@ -79,7 +80,8 @@ class _SearchBarWidgetState extends ConsumerState<SearchBarWidget> {
                 )
               : null,
           border: InputBorder.none,
-          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         ),
       ),
     );
