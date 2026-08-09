@@ -3,7 +3,9 @@
 **Cause Explorer** is a Flutter application built using **Flutter 3.x**, **Riverpod 2.x**, **Dio**, **GoRouter**, and **Clean Architecture**. It fetches social causes from an API endpoint, derives dynamic categories and hero image URLs, and provides interactive search, category filtering, favorites management, detail views, and robust error/loading/empty states.
 
 ---
-## Screenshots
+
+## 📸 Screenshots
+
 
 | Home | Search |
 |------|---------|
@@ -182,15 +184,6 @@ If given additional time to extend the application, the following enhancements w
 4. **Debounced Search & Server-Side Querying**:
    - Implement search input debouncing (e.g. 300ms delay) to avoid over-filtering on every keystroke, and update the repository layer to support server-side query parameters.
 
-5. **Visual Golden & Integration Testing**:
-   - Expand the current test suite with widget golden tests (visual regression testing) and full end-to-end integration tests using `integration_test`.
-
-6. **Hero Animations & Micro-Interactions**:
-   - Add Flutter `Hero` widget transitions between cause list cards and the detailed view, along with interactive micro-animations for liking/favoriting causes.
-
-7. **Deep Linking & Localization (i18n)**:
-   - Configure custom scheme and HTTPS deep links via `GoRouter` (e.g., `causeexplorer://cause/42`) and add internationalization support with `flutter_localizations`.
-
 ---
 
 ## 🧪 Testing
@@ -208,3 +201,12 @@ flutter test
 
 ---
 
+## 📦 Tech Stack & Dependencies
+
+| Package | Version | Purpose |
+|---|---|---|
+| `flutter_riverpod` | `^2.5.1` | State management |
+| `dio` | `^5.4.3` | HTTP networking |
+| `go_router` | `^14.2.0` | Declarative navigation |
+| `cached_network_image` | `^3.3.1` | Optimized image loading with cache |
+| `google_fonts` | `^6.2.1` | Custom typography (Outfit) |
