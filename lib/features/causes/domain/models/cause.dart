@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 
+// Domain Model for Cause
 @immutable
 class Cause {
   final int id;

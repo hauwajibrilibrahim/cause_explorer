@@ -2,6 +2,7 @@ import '../../../../core/constants/api_constants.dart';
 import '../../../../core/constants/app_categories.dart';
 import '../../domain/models/cause.dart';
 
+// Data Transfer Object for Cause
 class CauseDto {
   final int id;
   final int userId;
