@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../providers/cause_providers.dart';
 
+// Favorite button for adding/removing causes from favorites
 class FavoriteButton extends ConsumerWidget {
   final int causeId;
   final double size;
@@ -17,7 +18,8 @@ class FavoriteButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // Only watch this specific cause's favorite status to avoid rebuilding whole list item
     final isFavorite = ref.watch(
-      favoritesNotifierProvider.select((favorites) => favorites.contains(causeId)),
+      favoritesNotifierProvider
+          .select((favorites) => favorites.contains(causeId)),
     );
 
     return InkWell(

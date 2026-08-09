@@ -6,6 +6,7 @@ import '../widgets/empty_state_widget.dart';
 import '../widgets/error_state_widget.dart';
 import '../widgets/loading_skeleton_widget.dart';
 
+// Favorites screen for displaying favorite causes
 class FavoritesScreen extends ConsumerWidget {
   const FavoritesScreen({super.key});
 
@@ -22,7 +23,8 @@ class FavoritesScreen extends ConsumerWidget {
           if (causes.isEmpty) {
             return const EmptyStateWidget(
               title: 'No Favorites Yet',
-              message: 'Explore causes and tap the heart icon to save your favorite social causes here.',
+              message:
+                  'Explore causes and tap the heart icon to save your favorite social causes here.',
               icon: Icons.favorite_border_rounded,
             );
           }
