@@ -1,8 +1,21 @@
-# 🌍 Cause Explorer - Flutter Take-Home Internship Project
+# 🌍 Cause Explorer - Flutter take-home assessment for Bayana Flutter Developer Intern role
 
-**Cause Explorer** is a production-grade Flutter application built using **Flutter 3.x**, **Riverpod 2.x**, **Dio**, **GoRouter**, and **Clean Architecture**. It fetches social causes from an API endpoint, derives dynamic categories and hero image URLs, and provides interactive search, category filtering, favorites management, detail views, and robust error/loading/empty states.
+**Cause Explorer** is a Flutter application built using **Flutter 3.x**, **Riverpod 2.x**, **Dio**, **GoRouter**, and **Clean Architecture**. It fetches social causes from an API endpoint, derives dynamic categories and hero image URLs, and provides interactive search, category filtering, favorites management, detail views, and robust error/loading/empty states.
 
 ---
+## Screenshots
+
+| Home | Search |
+|------|---------|
+| ![](assets/screenshots/home.png) | ![](assets/screenshots/search.png) |
+
+| Filter | Favorites |
+|------|---------|
+| ![](assets/screenshots/filter.png) | ![](assets/screenshots/favorites.png) |
+
+| Detail |
+|---------|
+| ![](assets/screenshots/detail.png) |
 
 ## 🚀 How to Run the Project
 
