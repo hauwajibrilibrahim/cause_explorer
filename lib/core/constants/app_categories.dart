@@ -9,7 +9,7 @@ class AppCategories {
     'Empowerment',
   ];
 
-  /// Category Formula: categories[(userId - 1) % categories.length]
+  // Category Formula: categories[(userId - 1) % categories.length]
   static String deriveCategoryFromUserId(int userId) {
     if (userId <= 0) return categories[0];
     final index = (userId - 1) % categories.length;

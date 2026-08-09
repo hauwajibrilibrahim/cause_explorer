@@ -6,10 +6,12 @@ abstract class CauseRemoteDataSource {
   Future<List<CauseDto>> fetchPosts();
 }
 
+// Implementation of CauseRemoteDataSource
 class CauseRemoteDataSourceImpl implements CauseRemoteDataSource {
   final DioClient _dioClient;
 
-  CauseRemoteDataSourceImpl({required DioClient dioClient}) : _dioClient = dioClient;
+  CauseRemoteDataSourceImpl({required DioClient dioClient})
+      : _dioClient = dioClient;
 
   @override
   Future<List<CauseDto>> fetchPosts() async {
@@ -19,7 +21,8 @@ class CauseRemoteDataSourceImpl implements CauseRemoteDataSource {
           .map((json) => CauseDto.fromJson(json as Map<String, dynamic>))
           .toList();
     } else {
-      throw FormatException('Unexpected response format: expected a List, got ${response.runtimeType}');
+      throw FormatException(
+          'Unexpected response format: expected a List, got ${response.runtimeType}');
     }
   }
 }

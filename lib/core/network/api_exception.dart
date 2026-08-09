@@ -8,15 +8,20 @@ class ApiException implements Exception {
   });
 
   @override
-  String toString() => 'ApiException(message: $message, statusCode: $statusCode)';
+  String toString() =>
+      'ApiException(message: $message, statusCode: $statusCode)';
 }
 
+// Exception types
 class NetworkException extends ApiException {
-  const NetworkException({super.message = 'No Internet connection. Please check your network.'});
+  const NetworkException(
+      {super.message = 'No Internet connection. Please check your network.'});
 }
 
 class ServerException extends ApiException {
-  const ServerException({super.message = 'Server error occurred. Please try again later.', super.statusCode});
+  const ServerException(
+      {super.message = 'Server error occurred. Please try again later.',
+      super.statusCode});
 }
 
 class UnknownApiException extends ApiException {

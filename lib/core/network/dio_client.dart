@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import '../constants/api_constants.dart';
 import 'api_exception.dart';
 
+// Dio Client for network requests
 class DioClient {
   final Dio _dio;
 
@@ -10,8 +11,10 @@ class DioClient {
             Dio(
               BaseOptions(
                 baseUrl: ApiConstants.baseUrl,
-                connectTimeout: const Duration(milliseconds: ApiConstants.connectTimeout),
-                receiveTimeout: const Duration(milliseconds: ApiConstants.receiveTimeout),
+                connectTimeout:
+                    const Duration(milliseconds: ApiConstants.connectTimeout),
+                receiveTimeout:
+                    const Duration(milliseconds: ApiConstants.receiveTimeout),
                 headers: {
                   'Content-Type': 'application/json; charset=UTF-8',
                   'Accept': 'application/json',
@@ -30,7 +33,8 @@ class DioClient {
     );
   }
 
-  Future<dynamic> get(String endpoint, {Map<String, dynamic>? queryParameters}) async {
+  Future<dynamic> get(String endpoint,
+      {Map<String, dynamic>? queryParameters}) async {
     try {
       final response = await _dio.get(
         endpoint,
@@ -54,13 +58,15 @@ class DioClient {
       case DioExceptionType.badResponse:
         final statusCode = error.response?.statusCode;
         return ServerException(
-          message: 'Server Error ($statusCode): ${error.response?.statusMessage ?? "Unknown"}',
+          message:
+              'Server Error ($statusCode): ${error.response?.statusMessage ?? "Unknown"}',
           statusCode: statusCode,
         );
       case DioExceptionType.cancel:
         return const ApiException(message: 'Request was cancelled.');
       default:
-        return UnknownApiException(message: error.message ?? 'Network request failed.');
+        return UnknownApiException(
+            message: error.message ?? 'Network request failed.');
     }
   }
 }
