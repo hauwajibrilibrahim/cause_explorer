@@ -7,15 +7,15 @@
 
 | Home | Search |
 |------|---------|
-| ![](assets/screenshots/home.png) | ![](assets/screenshots/search.png) |
+| ![](assets/screenshots/home.jpg) | ![](assets/screenshots/search.jpg) |
 
 | Filter | Favorites |
 |------|---------|
-| ![](assets/screenshots/filter.png) | ![](assets/screenshots/favorites.png) |
+| ![](assets/screenshots/filter.jpg) | ![](assets/screenshots/favorites.jpg) |
 
 | Detail |
 |---------|
-| ![](assets/screenshots/detail.png) |
+| ![](assets/screenshots/detail.jpg) |
 
 ## 🚀 How to Run the Project
 
